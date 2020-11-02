@@ -4,11 +4,10 @@ SECOND: .int 22
 .global main
 main:
 /*Добавляем в стек*/
-pushl FIRST 
 pushl SECOND
+pushl FIRST 
 call Watch  #Вызов функции
-popl %eax # Вычищаем параметр из стека
-popl %ebx # Вычищаем параметр из стека
+addl $8, %esp
 xor %eax, %eax
 ret
     

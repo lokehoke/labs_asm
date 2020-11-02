@@ -10,11 +10,11 @@ pushl b
 pushl c
 call operator
 addl $3*4, %esp
-push %eax
 push %ecx
+push %eax
 push $msg
 call printf
 addl $12, %esp
+movl $0, %ecx
 movl $0, %eax
-xor %eax,%eax
 ret
