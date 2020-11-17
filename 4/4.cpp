@@ -27,27 +27,36 @@ void ToUpper(unsigned int symbol) {
     printf("%c to upper is: %c \n", symbol, result);
 }
 
+void digitToSymbol(unsigned int symbol) {
+    unsigned int result;
+    asm ( "xor $('A'-1), %[a]" : "=r" (result) : [a]"r"(symbol));
+    printf("%c to upper is: %c \n", symbol, result);
+}
+
 int main() {
-    ASCIIToNumber(0x30);
-    ASCIIToNumber(0x34);
-    ASCIIToNumber(0x39);
+    // ASCIIToNumber(0x30);
+    // ASCIIToNumber(0x34);
+    // ASCIIToNumber(0x39);
 
-    printf("\n");
+    // printf("\n");
 
-    NumberToASCII(0);
-    NumberToASCII(2);
-    NumberToASCII(9);
+    // NumberToASCII(0);
+    // NumberToASCII(2);
+    // NumberToASCII(9);
 
-    printf("\n");
+    // printf("\n");
 
-    ToLower('A');
-    ToLower('O');
-    ToLower('X');
+    // ToLower('A');
+    // ToLower('O');
+    // ToLower('X');
 
-    printf("\n");
+    // printf("\n");
 
-    ToUpper('a');
-    ToUpper('o');
-    ToUpper('x');
+    // ToUpper('a');
+    // ToUpper('o');
+    // ToUpper('x');
+
+    digitToSymbol(3);
+
     return 0;
 }

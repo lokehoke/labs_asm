@@ -4,10 +4,10 @@ using namespace std;
 
 int main() {
     unsigned p1 = 1;
-    unsigned p2 = 2147483600;
+    unsigned p2 = 4294967295;
     asm goto (
         "add %[p1], %[p2]\n\t"
-        "jo  %l2         \n\t"
+        "jc  %l2         \n\t"
         ::  [p1]"r"(p1),
             [p2]"r"(p2)
         : "cc"
