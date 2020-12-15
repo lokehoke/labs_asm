@@ -1,12 +1,11 @@
 #include <stdio.h>
 int main(){
-    int x = 10, y=0;
+    unsigned int x = 10, y=0;
 
     asm
     (R"(
         movl %[X], %[Y]
-        imull $3, %[Y]
-        incl %[Y]
+        lea 1(%[Y], %[Y], 2), %[Y]
         shrl $1, %[X]
         cmovncl %[X], %[Y]
     )"  : [Y]"+r"(y)

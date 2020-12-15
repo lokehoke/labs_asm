@@ -17,7 +17,11 @@ int main(){
 
         fcmovbe %%st(2), %%st(0) 
 
-        fstpl %[Y] 
+        fstpl %[Y]
+
+        ffree %%st(2)
+        ffree %%st(1)
+        ffree %%st(0)
         )" : [Y]"=m"(y)
            : [X]"rm"(x), [c]"m"(c), [d]"m"(d), [f]"m"(f)
            : "cc"
