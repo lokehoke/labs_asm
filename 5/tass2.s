@@ -7,3 +7,6 @@
         fldl 12(%esp)
         faddp
         fdivp
+        f2xm1
+        fld1
+        faddp
